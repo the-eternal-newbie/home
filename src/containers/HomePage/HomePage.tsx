@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Button = () => {
+const HomePage = () => {
     return <div></div>;
 };
 
-export default Button;
+export default HomePage;
