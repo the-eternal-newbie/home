@@ -6,7 +6,6 @@ export const addArticle = (payload: unknown) => {
     return { type: ADD_ARTICLE, payload };
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const setLang = (payload: unknown) => {
+export const setLang = (payload: string): { type: string; payload: string } => {
     return { type: SET_LANG, payload };
 };

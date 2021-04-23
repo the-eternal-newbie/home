@@ -14,7 +14,7 @@ const rootReducer: Reducer = (state = initialState, action) => {
         });
     }
     if (action.type === SET_LANG) {
-        state.lang = action.payload;
+        return Object.assign({}, state, { lang: action.payload as SupportedLanguages });
     }
     return state;
 };
