@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setLang } from '../../utils/redux/actions';
-import store from '../../utils/redux/store';
+import { store } from '../../utils/redux/store';
 import Text from '../../components/Text/Text';
 
 const HomePage: React.FC<{ lang?: string }> = (props: { lang?: string }) => {
