@@ -1,7 +1,8 @@
 import React from 'react';
+import Text from '../../components/Text/Text';
 
 const HomePage: React.FC = () => {
-    return <div></div>;
+    return <Text />;
 };
 
 export default HomePage;
