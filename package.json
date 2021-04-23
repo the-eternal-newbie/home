@@ -2,7 +2,7 @@
   "name": "home",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://the-eternal-newbie.github.io/home",
+  "homepage": "https://the-eternal-newbie.github.io/home",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
