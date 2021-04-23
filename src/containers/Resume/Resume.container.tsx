@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ResumeContainer = () => {
+const ResumeContainer: React.FC = () => {
     return <div>resume</div>;
 };
 

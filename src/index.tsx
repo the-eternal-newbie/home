@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import Contact from './containers/Contact/Contact.container';
-import HomePage from './containers/HomePage/HomePage.container';
-import Resume from './containers/Resume/Resume.container';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

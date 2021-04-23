@@ -5,7 +5,7 @@ import Contact from './containers/Contact/Contact.container';
 import HomePage from './containers/HomePage/HomePage.container';
 import Resume from './containers/Resume/Resume.container';
 
-const App = () => {
+const App: React.FC = () => {
     return (
         <Switch>
             <Route exact path="/" component={HomePage} />

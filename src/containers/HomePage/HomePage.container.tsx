@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HomePageContainer = () => {
+const HomePageContainer: React.FC = () => {
     return <div>homepage</div>;
 };
 
