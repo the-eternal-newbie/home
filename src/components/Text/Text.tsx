@@ -1,11 +1,14 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { StyledText } from './Text.styled';
+import { IText } from './Text.types';
 
-const Text: React.FC = () => {
+const Text: React.FC<IText> = (props: IText) => {
+    const { id, style } = props;
     return (
-        <p>
-            <FormattedMessage id="Generic.Welcome" />
-        </p>
+        <StyledText style={style}>
+            <FormattedMessage id={id} />
+        </StyledText>
     );
 };
 
