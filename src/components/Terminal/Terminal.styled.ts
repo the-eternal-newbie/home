@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../utils/styles/colors';
+import { colors } from '../../utils/styles/_colors';
 
 export const TerminalFrame = styled.div`
     background-color: ${colors.greyblack};
@@ -7,6 +7,7 @@ export const TerminalFrame = styled.div`
     padding-left: 20px;
     padding-top: 30px;
     width: 60%;
+    min-width: 400px;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -19,18 +20,34 @@ export const Dot = styled.p`
     height: 10px;
 `;
 
+export const DotContainer = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    width: 50px;
+    margin-left: 10px;
+`;
+
 export const TerminalHeader = styled.div`
     width: auto;
     height: 24px;
     display: flex;
-    justify-content: flex-start;
-    font-weight: 600;
+    align-items: center;
+    font-weight: 700;
     border-radius: 4px 4px 0px 0px;
-    font-size: 12px;
+    font-size: 0.75em;
     margin-left: -20px;
     margin-top: -30px;
-    display: block;
     background-color: ${colors.white2};
+`;
+
+export const TerminalTextHeader = styled.div`
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `;
 
 export const TypeWriter = styled.pre`
