@@ -6,7 +6,7 @@ import Text from '../../components/Text/Text';
 import { colors } from '../../utils/styles/colors';
 
 const Logo: React.FC<ILogo> = (props: ILogo) => {
-    const { size, type, variation } = props;
+    const { size } = props;
     const { width, height } =
         size === 'large'
             ? { width: '176px', height: '154px' }
