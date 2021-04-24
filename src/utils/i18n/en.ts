@@ -3,5 +3,6 @@ export const en = {
     'Generic.Contact': 'Contact'.toUpperCase(),
     'Generic.Projects': 'Projects'.toUpperCase(),
     'Generic.Resume': 'Resume'.toUpperCase(),
+    'Generic.Greetings': 'Hello!',
     'Resume.Job.Position': 'Full-Stack Developer',
 };
