@@ -1,3 +1,4 @@
 export interface IText {
-    text: string;
+    id: string;
+    style?: React.CSSProperties;
 }
