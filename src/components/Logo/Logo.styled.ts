@@ -1,5 +1,5 @@
 import '../../utils/styles/_fonts.css';
-import { colors } from '../../utils/styles/colors';
+import { colors } from '../../utils/styles/_colors';
 import styled from 'styled-components';
 
 export const Square = styled.div`
@@ -14,7 +14,8 @@ export const LogoContainer = styled.div`
     flex-direction: row;
     align-items: flex-end;
     display: flex;
-    max-width: 280px;
+    max-width: 1800px;
+    min-width: 280px;
 `;
 
 export const Title = styled.p`
