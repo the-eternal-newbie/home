@@ -4,8 +4,7 @@ import AboutStrip from './components/AboutStrip';
 import MenuBar from '../../components/MenuBar/MenuBar';
 import { Container } from './HomePage.styled';
 
-const HomePage: React.FC<{ lang?: string }> = (props: { lang?: string }) => {
-    const { lang } = props;
+const HomePage: React.FC = () => {
     return (
         <>
             <MenuBar />
