@@ -3,10 +3,10 @@ import React from 'react';
 import { ILogo } from './Logo.types';
 import { LogoContainer, Square, Title } from './Logo.styled';
 import Text from '../../components/Text/Text';
-import { colors } from '../../utils/styles/colors';
+import { colors } from '../../utils/styles/_colors';
 
 const Logo: React.FC<ILogo> = (props: ILogo) => {
-    const { text, size, type, variation } = props;
+    const { size } = props;
     const { width, height } =
         size === 'large'
             ? { width: '176px', height: '154px' }
@@ -28,6 +28,7 @@ const Logo: React.FC<ILogo> = (props: ILogo) => {
             </Title>
             <Text
                 id={'Resume.Job.Position'}
+                animation={'fdInLft'}
                 style={{
                     color: colors.grey2,
                     lineHeight: '1px',

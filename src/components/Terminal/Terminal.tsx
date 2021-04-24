@@ -1,28 +1,27 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 import { consoleLines } from '../../utils/constants';
-import { colors } from '../../utils/styles/colors';
-import { Bash, Dot, TerminalFrame, TerminalHeader, TypeWriter } from './Terminal.styled';
+import { colors } from '../../utils/styles/_colors';
+import {
+    Bash,
+    Dot,
+    DotContainer,
+    TerminalFrame,
+    TerminalHeader,
+    TerminalTextHeader,
+    TypeWriter,
+} from './Terminal.styled';
 
 const Terminal: React.FC = () => {
     return (
         <TerminalFrame>
             <TerminalHeader>
-                <div style={{ display: 'flex', width: '100%' }}>
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-evenly',
-                            width: '5%',
-                            marginRight: '35%',
-                        }}
-                    >
-                        <Dot style={{ background: colors.red2 }} />
-                        <Dot style={{ background: colors.yellow2 }} />
-                        <Dot style={{ background: colors.green1 }} />
-                    </div>
-                    <p style={{ marginTop: '4px' }}>/home/the-eternal-newbie/development/portfolio/</p>
-                </div>
+                <DotContainer>
+                    <Dot style={{ background: colors.red2 }} />
+                    <Dot style={{ background: colors.yellow2 }} />
+                    <Dot style={{ background: colors.green1 }} />
+                </DotContainer>
+                <TerminalTextHeader>/home/the-eternal-newbie/development/portfolio/</TerminalTextHeader>
             </TerminalHeader>
             <div>
                 <Bash>

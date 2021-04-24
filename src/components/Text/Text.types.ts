@@ -1,4 +1,6 @@
 export interface IText {
-    id: string;
+    id?: string;
     style?: React.CSSProperties;
+    lang?: string;
+    animation?: 'fdInBtm' | 'fdInLft' | 'fdInRgt';
 }
