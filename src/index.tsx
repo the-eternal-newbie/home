@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './index.css';
 import { store } from './utils/redux/store';
@@ -12,9 +12,9 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedIntlProvider>
-            <BrowserRouter>
+            <HashRouter>
                 <App />
-            </BrowserRouter>
+            </HashRouter>
         </ConnectedIntlProvider>
     </Provider>,
     document.getElementById('root'),

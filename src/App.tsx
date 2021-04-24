@@ -8,9 +8,9 @@ import Resume from './containers/Resume/Resume.container';
 const App: React.FC = () => {
     return (
         <Switch>
-            <Route exact path="/home" component={HomePage} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/Resume" component={Resume} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/Resume" component={Resume} />
         </Switch>
     );
 };
