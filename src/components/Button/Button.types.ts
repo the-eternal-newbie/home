@@ -1,5 +1,8 @@
 export interface IButton {
-    text?: string;
     type: 'primary' | 'secondary' | 'circle';
-    size: 'small' | 'medium' | 'big' | 'fullWidth';
+    text?: string;
+    onClick?: (props?: unknown) => unknown;
+    to?: string;
+    style?: React.CSSProperties;
+    navigation?: boolean;
 }
