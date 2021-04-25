@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../utils/styles/_colors';
 
 export const TerminalSection = styled.section`
     display: flex;
@@ -6,15 +7,16 @@ export const TerminalSection = styled.section`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 60%;
+    height: 100%;
 `;
 
 export const AboutSection = styled.section`
     display: flex;
+    background-color: ${colors.white1};
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 60%;
+    height: 120%;
 `;
 
 export const AboutContainer = styled.div`
@@ -31,5 +33,6 @@ export const AboutBox = styled.div`
 
 export const Container = styled.section`
     width: 100%;
-    height: 800px;
+    height: 500px;
+    margin-bottom: 220px;
 `;

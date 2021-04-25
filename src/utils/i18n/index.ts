@@ -9,5 +9,6 @@ export const languages = {
     es,
 };
 
+export const supportedLanguages = ['en', 'es'];
 export type SupportedLanguages = keyof typeof languages;
 export type Ids = keyof typeof en;

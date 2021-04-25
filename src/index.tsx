@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import './index.css';
 import { store } from './utils/redux/store';
 import App from './App';
+import MenuBar from './components/MenuBar/MenuBar';
 import ConnectedIntlProvider from './utils/i18n/ConnectedIntlProvider';
 
 import reportWebVitals from './reportWebVitals';
@@ -13,6 +14,7 @@ ReactDOM.render(
     <Provider store={store}>
         <ConnectedIntlProvider>
             <HashRouter>
+                <MenuBar />
                 <App />
             </HashRouter>
         </ConnectedIntlProvider>

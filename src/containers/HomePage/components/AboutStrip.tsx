@@ -48,7 +48,7 @@ const AboutStrip: React.FC = () => {
                             style={{
                                 width: '140px',
                                 height: '140px',
-                                background: colors.red1,
+                                backgroundColor: colors.red1,
                                 color: colors.white1,
                                 fontSize: '16px',
                                 fontWeight: 600,
@@ -63,7 +63,7 @@ const AboutStrip: React.FC = () => {
                             style={{
                                 width: '140px',
                                 height: '140px',
-                                background: colors.red2,
+                                backgroundColor: colors.red2,
                                 color: colors.white1,
                                 fontSize: '16px',
                                 fontWeight: 600,

@@ -9,33 +9,23 @@ const Logo: React.FC<ILogo> = (props: ILogo) => {
     const { size } = props;
     const { width, height } =
         size === 'large'
-            ? { width: '176px', height: '154px' }
+            ? { width: '120px', height: '104px' }
             : size === 'medium'
-            ? { width: '88px', height: '76px' }
-            : { width: '44px', height: '38px' };
+            ? { width: '62px', height: '58px' }
+            : { width: '30px', height: '26px' };
     return (
         <LogoContainer>
-            <Square style={{ width: width, height: height }} />
+            <Square style={{ width: width, height: height, zIndex: 1000 }}>
+                <Title>the eternal newbie</Title>
+            </Square>
             <Square
-                style={{ width: width, height: height, opacity: 0.4, position: 'absolute', left: '40px', top: '16px' }}
-            />
-            <Title>
-                the
-                <br />
-                eternal
-                <br />
-                newbie
-            </Title>
-            <Text
-                id={'Resume.Job.Position'}
-                animation={'fdInLft'}
                 style={{
-                    color: colors.grey2,
-                    lineHeight: '1px',
-                    fontSize: '16px',
-                    fontStyle: 'italic',
-                    letterSpacing: '0px',
-                    marginLeft: '12px',
+                    width: width,
+                    height: height,
+                    color: colors.yellow1,
+                    position: 'absolute',
+                    left: '16px',
+                    top: '18px',
                 }}
             />
         </LogoContainer>
