@@ -12,11 +12,40 @@ export const TerminalSection = styled.section`
 
 export const AboutSection = styled.section`
     display: flex;
-    background-color: ${colors.white1};
+    background-color: ${colors.totalwhite};
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 120%;
+`;
+
+export const Wave = styled.div`
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    background: #e0efe3;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 340px;
+        height: 80px;
+        background-color: white;
+        right: -5px;
+        top: 40px;
+    }
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 300px;
+        height: 70px;
+        background-color: #e0efe3;
+        left: 0;
+        top: 27px;
+    }
 `;
 
 export const AboutContainer = styled.div`
