@@ -13,6 +13,7 @@ export const CircleButton = styled.button`
     border-radius: 50%;
     cursor: pointer;
     border: none;
+    transition: 0.3s;
     &:hover {
         background-color: ${({ style }) =>
             style?.backgroundColor

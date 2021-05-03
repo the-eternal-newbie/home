@@ -1,21 +1,8 @@
 import styled from 'styled-components';
 import '../../utils/styles/_fonts.css';
-import { fdInBtm, fdInLft } from '../../utils/styles/_animations';
 import { colors } from '../../utils/styles/_colors';
+import { getAnimation } from '../../utils/styles/_animations';
 import { IText } from './Text.types';
-
-const getAnimation = (animation: string | undefined) => {
-    switch (animation) {
-        case 'fdInBtm':
-            return fdInBtm;
-        case 'fdInLft':
-            return fdInLft;
-        case 'fdInRgt':
-            break;
-        default:
-            return 'none';
-    }
-};
 
 export const StyledText = styled.p`
     font-family: ${({ style }) => (style?.fontFamily ? style.fontFamily : "'Work Sans', sans-serif")};

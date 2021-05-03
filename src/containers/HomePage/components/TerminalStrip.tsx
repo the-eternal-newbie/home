@@ -13,7 +13,7 @@ const TerminalStrip: React.FC = () => {
                 id={'Generic.Catchphrase'}
                 animation={'fdInBtm'}
                 style={{
-                    color: colors.red3,
+                    color: colors.yellow2,
                     fontFamily: "'Montserrat', sans-serif",
                     fontSize: '2vw',
                     fontWeight: 800,

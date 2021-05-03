@@ -27,6 +27,7 @@ export const LightenDarkenColor = (col: string, amt: number): string => {
 };
 
 export const colors = {
+    totalwhite: '#FFFFFF',
     white1: '#F3F3F3',
     white2: '#E3E3E3',
     grey1: '#D2D5D2',
