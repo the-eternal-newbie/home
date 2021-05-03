@@ -1,3 +1,3 @@
 export interface IMenuBar {
-    text: string;
+    lang?: string;
 }
