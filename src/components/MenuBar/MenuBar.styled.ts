@@ -3,12 +3,39 @@ import { NavLink } from 'react-router-dom';
 import { colors } from '../../utils/styles/_colors';
 import { getAnimation } from '../../utils/styles/_animations';
 
-export const MenuBarContainer = styled.header`
-    background-color: ${colors.totalwhite};
-    justify-content: space-between;
-    align-items: flex-end;
-    max-height: 160px;
-`;
+export const MenuBarContainer: React.CSSProperties = {
+    maxHeight: '160px',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+    backgroundColor: colors.totalwhite,
+};
+
+export const MenuBarCollapsed: React.CSSProperties = {
+    top: 0,
+    zIndex: 1000,
+    width: '100%',
+    height: '52px',
+    display: 'flex',
+    position: 'fixed',
+    alignItems: 'center',
+    backgroundColor: colors.greyblack,
+    transition: 'all 0.3s linear',
+};
+
+export const LangContainer: React.CSSProperties = {
+    display: 'flex',
+    width: '8%',
+    alignContent: 'center',
+    justifyContent: 'center',
+    borderRadius: '6px',
+    border: `1px solid ${colors.grey3}`,
+};
+
+export const LangContainerCollapsed: React.CSSProperties = {
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'space-between',
+};
 
 export const Line = styled.div`
     display: block;
@@ -52,21 +79,8 @@ export const NavElementLink = styled(NavLink)`
     }
 `;
 
-export const LangContainer = styled.div`
-    display: flex;
-    width: 8%;
-    align-content: center;
-    justify-content: center;
-    border-radius: 6px;
-    border: 1px solid ${colors.grey3};
-`;
-
 export const NavContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 160px;
-    margin-top: 28px;
-    margin-bottom: 4px;
-    width: 90%;
 `;
