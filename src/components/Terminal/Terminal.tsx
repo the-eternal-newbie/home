@@ -25,7 +25,7 @@ const Terminal: React.FC = () => {
             </TerminalHeader>
             <div>
                 <Bash>
-                    <p style={{ display: 'inline', color: colors.green1 }}>🠪 </p>
+                    <p style={{ display: 'inline', color: colors.green1 }}>&#8594; </p>
                     <p style={{ display: 'inline', color: colors.blue1 }}>~ </p>
                     <p style={{ display: 'inline', color: colors.green1 }}>pwd</p>
                 </Bash>
@@ -35,7 +35,7 @@ const Terminal: React.FC = () => {
                 </Bash>
                 <br />
                 <Bash>
-                    <p style={{ display: 'inline', color: colors.green1 }}>🠪 </p>
+                    <p style={{ display: 'inline', color: colors.green1 }}>&#8594; </p>
                     <p style={{ display: 'inline', color: colors.blue1 }}>~ </p>
                     <p style={{ display: 'inline', color: colors.green1, textDecoration: 'underline' }}>
                         development/portfolio
@@ -43,7 +43,7 @@ const Terminal: React.FC = () => {
                 </Bash>
                 <br />
                 <Bash>
-                    <p style={{ display: 'inline', color: colors.green1 }}>🠪 </p>
+                    <p style={{ display: 'inline', color: colors.green1 }}>&#8594; </p>
                     <p style={{ display: 'inline', color: colors.blue1 }}>portfolio </p>
                     <p style={{ display: 'inline', color: colors.pink2 }}> git:(</p>
                     <p style={{ display: 'inline', color: colors.red3 }}>master</p>

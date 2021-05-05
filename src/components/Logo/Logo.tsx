@@ -17,7 +17,7 @@ const Logo: React.FC<ILogo> = (props: ILogo) => {
             style={
                 type === 'full'
                     ? { top: '10px', left: '60px' }
-                    : { position: 'initial', minWidth: '12%', padding: '0px 10px 10px 0px' }
+                    : { position: 'initial', minWidth: '16%', padding: '0px 2px 10px 0px' }
             }
         >
             {type === 'full' ? (

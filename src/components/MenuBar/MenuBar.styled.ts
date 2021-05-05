@@ -29,12 +29,14 @@ export const LangContainer: React.CSSProperties = {
     justifyContent: 'center',
     borderRadius: '6px',
     border: `1px solid ${colors.grey3}`,
+    marginRight: '4px',
 };
 
 export const LangContainerCollapsed: React.CSSProperties = {
     display: 'flex',
     alignContent: 'center',
     justifyContent: 'space-between',
+    marginRight: '12px',
 };
 
 export const Line = styled.div`

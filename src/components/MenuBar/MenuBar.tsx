@@ -1,7 +1,9 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
+import { CSSProperties } from 'styled-components';
 import { supportedLanguages } from '../../utils/i18n/index';
 import { usaFlag, mexicoFlag } from '../../utils/icons/flags/index';
+import useMatchMedia from '../../utils/hooks/useMatchMedia';
 import {
     LangContainer,
     Line,
@@ -19,10 +21,11 @@ import { store } from '../../utils/redux/store';
 import { setLang } from '../../utils/redux/actions';
 import { colors } from '../../utils/styles/_colors';
 import { IMenuBar } from './MenuBar.types';
-import { CSSProperties } from 'styled-components';
+import SideBar from '../SideBar/SideBar';
 
 const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
     const { lang } = props;
+    const [mediaSize] = useMatchMedia();
     const menuBar = useRef<HTMLDivElement>(null);
     const [displayHome, setDisplayHome] = useState(false);
 
@@ -34,6 +37,9 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
             : menuBar.current && menuBar.current.offsetTop === window.pageYOffset && setSticky(false);
 
     useEffect(() => {
+        if (window.location.href.substring(window.location.href.length - 2, window.location.href.length) !== '#/')
+            setDisplayHome(true);
+        else setDisplayHome(false);
         const watchScroll = () => {
             window.addEventListener('scroll', logit);
         };
@@ -68,12 +74,6 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
             : {};
     };
 
-    useEffect(() => {
-        if (window.location.href.substring(window.location.href.length - 2, window.location.href.length) !== '#/')
-            setDisplayHome(true);
-        else setDisplayHome(false);
-    }, []);
-
     return (
         <div ref={menuBar} style={sticky ? MenuBarCollapsed : MenuBarContainer}>
             <Logo type={sticky ? 'minimal' : 'full'} size={'medium'} />
@@ -84,63 +84,64 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
                               width: '85%',
                           }
                         : {
-                              marginLeft: '160px',
-                              marginTop: '28px',
-                              marginBottom: '4px',
-                              width: '90%',
+                              margin: '28px 10px 4px 160px',
                           }
                 }
             >
-                <NavBar>
-                    <NavElementLink
-                        style={{ display: displayHome ? 'block' : 'none' }}
-                        onClick={() => setDisplayHome(false)}
-                        to="/"
-                    >
-                        <Text
-                            id={'Generic.Home'}
-                            animation={'fdInLft'}
-                            style={{
-                                color: sticky ? colors.totalwhite : colors.grey3,
-                                margin: '0px',
-                                fontSize: '12px',
-                            }}
-                        />
-                    </NavElementLink>
-                    <NavElementLink onClick={() => setDisplayHome(true)} to="/contact">
-                        <Text
-                            id={'Generic.Contact'}
-                            animation={'fdInLft'}
-                            style={{
-                                color: sticky ? colors.totalwhite : colors.grey3,
-                                margin: '0px',
-                                fontSize: '12px',
-                            }}
-                        />
-                    </NavElementLink>
-                    <NavElementLink onClick={() => setDisplayHome(true)} to="/projects">
-                        <Text
-                            id={'Generic.Projects'}
-                            animation={'fdInLft'}
-                            style={{
-                                color: sticky ? colors.totalwhite : colors.grey3,
-                                margin: '0px',
-                                fontSize: '12px',
-                            }}
-                        />
-                    </NavElementLink>
-                    <NavElementLink onClick={() => setDisplayHome(true)} to="/resume">
-                        <Text
-                            id={'Generic.Resume'}
-                            animation={'fdInLft'}
-                            style={{
-                                color: sticky ? colors.totalwhite : colors.grey3,
-                                margin: '0px',
-                                fontSize: '12px',
-                            }}
-                        />
-                    </NavElementLink>
-                </NavBar>
+                {mediaSize === 'mediaSmall' || mediaSize === 'mediaXsmall' || mediaSize === 'mediaMedium' ? (
+                    <SideBar />
+                ) : (
+                    <NavBar>
+                        <NavElementLink
+                            style={{ display: displayHome ? 'block' : 'none' }}
+                            onClick={() => setDisplayHome(false)}
+                            to="/"
+                        >
+                            <Text
+                                id={'Generic.Home'}
+                                animation={'fdInLft'}
+                                style={{
+                                    color: sticky ? colors.totalwhite : colors.grey3,
+                                    margin: '0px',
+                                    fontSize: '12px',
+                                }}
+                            />
+                        </NavElementLink>
+                        <NavElementLink onClick={() => setDisplayHome(true)} to="/contact">
+                            <Text
+                                id={'Generic.Contact'}
+                                animation={'fdInLft'}
+                                style={{
+                                    color: sticky ? colors.totalwhite : colors.grey3,
+                                    margin: '0px',
+                                    fontSize: '12px',
+                                }}
+                            />
+                        </NavElementLink>
+                        <NavElementLink onClick={() => setDisplayHome(true)} to="/projects">
+                            <Text
+                                id={'Generic.Projects'}
+                                animation={'fdInLft'}
+                                style={{
+                                    color: sticky ? colors.totalwhite : colors.grey3,
+                                    margin: '0px',
+                                    fontSize: '12px',
+                                }}
+                            />
+                        </NavElementLink>
+                        <NavElementLink onClick={() => setDisplayHome(true)} to="/resume">
+                            <Text
+                                id={'Generic.Resume'}
+                                animation={'fdInLft'}
+                                style={{
+                                    color: sticky ? colors.totalwhite : colors.grey3,
+                                    margin: '0px',
+                                    fontSize: '12px',
+                                }}
+                            />
+                        </NavElementLink>
+                    </NavBar>
+                )}
                 <div style={sticky ? LangContainerCollapsed : LangContainer}>
                     {supportedLanguages.map((langOpt, index) =>
                         sticky ? (
