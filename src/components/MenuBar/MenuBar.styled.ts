@@ -5,9 +5,10 @@ import { getAnimation } from '../../utils/styles/_animations';
 
 export const MenuBarContainer: React.CSSProperties = {
     maxHeight: '160px',
-    alignItems: 'flex-end',
-    justifyContent: 'space-between',
-    backgroundColor: colors.totalwhite,
+    display: 'flex',
+    width: '90%',
+    marginLeft: 0,
+    paddingLeft: '40px',
 };
 
 export const MenuBarCollapsed: React.CSSProperties = {
@@ -24,19 +25,8 @@ export const MenuBarCollapsed: React.CSSProperties = {
 
 export const LangContainer: React.CSSProperties = {
     display: 'flex',
-    width: '8%',
-    alignContent: 'center',
-    justifyContent: 'center',
-    borderRadius: '6px',
-    border: `1px solid ${colors.grey3}`,
-    marginRight: '4px',
-};
-
-export const LangContainerCollapsed: React.CSSProperties = {
-    display: 'flex',
-    alignContent: 'center',
-    justifyContent: 'space-between',
-    marginRight: '12px',
+    marginLeft: '26px',
+    marginTop: '2px',
 };
 
 export const Line = styled.div`
@@ -53,7 +43,6 @@ export const NavBar = styled.nav`
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    height: 30px;
 `;
 
 export const NavElement = styled.button`
@@ -70,7 +59,7 @@ export const NavElement = styled.button`
 export const NavElementLink = styled(NavLink)`
     width: auto;
     text-align: center;
-    padding: 10px;
+    padding: 18px;
     text-decoration: none;
     border: none;
     background: transparent;
@@ -85,4 +74,5 @@ export const NavContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: auto;
 `;

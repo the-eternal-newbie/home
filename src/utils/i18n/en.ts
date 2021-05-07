@@ -1,9 +1,9 @@
 export const en = {
-    'Generic.Catchphrase': 'What are we going to code today?'.toUpperCase(),
-    'Generic.Contact': 'Contact'.toUpperCase(),
-    'Generic.Home': 'Home'.toUpperCase(),
-    'Generic.Projects': 'Projects'.toUpperCase(),
-    'Generic.Resume': 'Resume'.toUpperCase(),
+    'Generic.Catchphrase': 'What are we going to code today?',
+    'Generic.Contact': 'Contact',
+    'Generic.Home': 'Home',
+    'Generic.Projects': 'Projects',
+    'Generic.Resume': 'Resume',
     'Generic.Greetings': 'Hello!',
     'About.Title': 'A Bit About Me',
     'About.Content.Short':

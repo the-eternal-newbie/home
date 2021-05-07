@@ -1,9 +1,9 @@
 export const es = {
-    'Generic.Catchphrase': '¿Qué vamos a codear hoy?'.toUpperCase(),
-    'Generic.Contact': 'Contacto'.toUpperCase(),
-    'Generic.Home': 'Inicio'.toUpperCase(),
-    'Generic.Projects': 'Proyectos'.toUpperCase(),
-    'Generic.Resume': 'Currículum'.toUpperCase(),
+    'Generic.Catchphrase': '¿Qué vamos a codear hoy?',
+    'Generic.Contact': 'Contacto',
+    'Generic.Home': 'Inicio',
+    'Generic.Projects': 'Proyectos',
+    'Generic.Resume': 'Currículum',
     'Generic.Greetings': 'Hola!',
     'About.Title': 'Un Poco Sobre Mí',
     'About.Content.Short':

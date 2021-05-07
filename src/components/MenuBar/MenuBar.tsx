@@ -11,9 +11,7 @@ import {
     MenuBarCollapsed,
     NavBar,
     NavContainer,
-    NavElement,
     NavElementLink,
-    LangContainerCollapsed,
 } from './MenuBar.styled';
 import Logo from '../Logo/Logo';
 import Text from '../Text/Text';
@@ -75,106 +73,101 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
     };
 
     return (
-        <div ref={menuBar} style={sticky ? MenuBarCollapsed : MenuBarContainer}>
-            <Logo type={sticky ? 'minimal' : 'full'} size={'medium'} />
-            <NavContainer
-                style={
-                    sticky
-                        ? {
-                              width: '85%',
-                          }
-                        : {
-                              margin: '28px 10px 4px 160px',
-                          }
-                }
-            >
-                {mediaSize === 'mediaSmall' || mediaSize === 'mediaXsmall' || mediaSize === 'mediaMedium' ? (
-                    <SideBar />
-                ) : (
-                    <NavBar>
-                        <NavElementLink
-                            style={{ display: displayHome ? 'block' : 'none' }}
-                            onClick={() => setDisplayHome(false)}
-                            to="/"
-                        >
-                            <Text
-                                id={'Generic.Home'}
-                                animation={'fdInLft'}
-                                style={{
-                                    color: sticky ? colors.totalwhite : colors.grey3,
-                                    margin: '0px',
-                                    fontSize: '12px',
-                                }}
-                            />
-                        </NavElementLink>
-                        <NavElementLink onClick={() => setDisplayHome(true)} to="/contact">
-                            <Text
-                                id={'Generic.Contact'}
-                                animation={'fdInLft'}
-                                style={{
-                                    color: sticky ? colors.totalwhite : colors.grey3,
-                                    margin: '0px',
-                                    fontSize: '12px',
-                                }}
-                            />
-                        </NavElementLink>
-                        <NavElementLink onClick={() => setDisplayHome(true)} to="/projects">
-                            <Text
-                                id={'Generic.Projects'}
-                                animation={'fdInLft'}
-                                style={{
-                                    color: sticky ? colors.totalwhite : colors.grey3,
-                                    margin: '0px',
-                                    fontSize: '12px',
-                                }}
-                            />
-                        </NavElementLink>
-                        <NavElementLink onClick={() => setDisplayHome(true)} to="/resume">
-                            <Text
-                                id={'Generic.Resume'}
-                                animation={'fdInLft'}
-                                style={{
-                                    color: sticky ? colors.totalwhite : colors.grey3,
-                                    margin: '0px',
-                                    fontSize: '12px',
-                                }}
-                            />
-                        </NavElementLink>
-                    </NavBar>
-                )}
-                <div style={sticky ? LangContainerCollapsed : LangContainer}>
-                    {supportedLanguages.map((langOpt, index) =>
-                        sticky ? (
+        <>
+            <div ref={menuBar} style={sticky ? MenuBarCollapsed : MenuBarContainer}>
+                <Logo type={sticky ? 'minimal' : 'full'} size={'medium'} />
+                <NavContainer
+                    style={
+                        sticky
+                            ? {
+                                  width: '85%',
+                              }
+                            : {
+                                  margin: '28px 10px 4px 160px',
+                              }
+                    }
+                >
+                    {mediaSize === 'mediaSmall' || mediaSize === 'mediaXsmall' || mediaSize === 'mediaMedium' ? (
+                        <SideBar />
+                    ) : (
+                        <NavBar>
+                            <NavElementLink
+                                style={{ display: displayHome ? 'block' : 'none' }}
+                                onClick={() => setDisplayHome(false)}
+                                to="/"
+                            >
+                                <Text
+                                    id={'Generic.Home'}
+                                    animation={'fdInLft'}
+                                    style={{
+                                        color: sticky ? colors.totalwhite : colors.yellow2,
+                                        margin: '0px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                    }}
+                                />
+                            </NavElementLink>
+                            <NavElementLink onClick={() => setDisplayHome(true)} to="/contact">
+                                <Text
+                                    id={'Generic.Contact'}
+                                    animation={'fdInLft'}
+                                    style={{
+                                        color: sticky ? colors.totalwhite : colors.yellow2,
+                                        margin: '0px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                    }}
+                                />
+                            </NavElementLink>
+                            <NavElementLink onClick={() => setDisplayHome(true)} to="/projects">
+                                <Text
+                                    id={'Generic.Projects'}
+                                    animation={'fdInLft'}
+                                    style={{
+                                        color: sticky ? colors.totalwhite : colors.yellow2,
+                                        margin: '0px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                    }}
+                                />
+                            </NavElementLink>
+                            <NavElementLink onClick={() => setDisplayHome(true)} to="/resume">
+                                <Text
+                                    id={'Generic.Resume'}
+                                    animation={'fdInLft'}
+                                    style={{
+                                        color: sticky ? colors.totalwhite : colors.yellow2,
+                                        margin: '0px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                    }}
+                                />
+                            </NavElementLink>
+                        </NavBar>
+                    )}
+                    <div style={LangContainer}>
+                        {supportedLanguages.map((langOpt, index) => (
                             <img
                                 src={matchCountry(langOpt)}
                                 width={'20px'}
-                                style={{ margin: '6px', cursor: 'pointer' }}
+                                style={{
+                                    margin: '6px',
+                                    cursor: 'pointer',
+                                    borderRadius: '50%',
+                                    border:
+                                        langOpt === lang
+                                            ? `2px solid ${sticky ? colors.totalwhite : colors.greyblack}`
+                                            : 'none',
+                                }}
                                 onClick={() => store.dispatch(setLang(langOpt))}
                             />
-                        ) : (
-                            <div
-                                key={`${index}${lang}-menu`}
-                                onClick={() => store.dispatch(setLang(langOpt))}
-                                style={{
-                                    backgroundColor: langOpt === lang ? colors.grey4 : colors.white1,
-                                    width: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    cursor: 'pointer',
-                                    ...borderStyle(index),
-                                }}
-                            >
-                                <img src={matchCountry(langOpt)} width={'14px'} style={{ margin: '6px' }} />
-                                <NavElement style={{ color: langOpt === lang ? colors.white1 : colors.grey4 }}>
-                                    {!sticky ? langOpt.toUpperCase() : ''}
-                                </NavElement>
-                            </div>
-                        ),
-                    )}
-                </div>
-            </NavContainer>
+                        ))}
+                    </div>
+                </NavContainer>
+            </div>
+
             {!sticky && <Line />}
-        </div>
+        </>
     );
 };
 
