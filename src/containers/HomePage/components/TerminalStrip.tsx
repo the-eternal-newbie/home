@@ -8,23 +8,35 @@ import logo from '../../../newbie.svg';
 const TerminalStrip: React.FC = () => {
     return (
         <TerminalSection>
-            <img src={logo} width={'150px'} />
-            <Text
-                id={'Generic.Catchphrase'}
-                animation={'fdInBtm'}
+            <div
                 style={{
-                    color: colors.yellow2,
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontSize: '2vw',
-                    fontWeight: 800,
-                    letterSpacing: '3px',
-                    lineHeight: '28px',
-                    textAlign: 'center',
-                    minWidth: '520px',
-                    marginTop: '10px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end',
+                    width: '30%',
+                    height: '100%',
                 }}
-            />
-            <Terminal />
+            >
+                {/* <img src={logo} width={'150px'} /> */}
+                <Text
+                    id={'Generic.Catchphrase'}
+                    animation={'fdInBtm'}
+                    style={{
+                        color: colors.yellow2,
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontSize: '3vw',
+                        fontWeight: 800,
+                        lineHeight: '65px',
+                        textAlign: 'left',
+                        minWidth: '520px',
+                        marginTop: '10px',
+                    }}
+                />
+            </div>
+            <div style={{ display: 'flex', height: '90%', width: '60%' }}>
+                <Terminal />
+            </div>
         </TerminalSection>
     );
 };
