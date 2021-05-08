@@ -2,6 +2,7 @@ import React from 'react';
 import TerminalStrip from './components/TerminalStrip';
 import AboutStrip from './components/AboutStrip';
 import { Container } from './HomePage.styled';
+import Footer from './components/Footer';
 
 const HomePage: React.FC = () => {
     return (
@@ -11,6 +12,9 @@ const HomePage: React.FC = () => {
             </Container>
             <Container>
                 <AboutStrip />
+            </Container>
+            <Container>
+                <Footer />
             </Container>
         </>
     );

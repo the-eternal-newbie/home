@@ -19,6 +19,19 @@ export const AboutSection = styled.section`
     height: 120%;
 `;
 
+export const FooterSection = styled.section`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+`;
+
+export const FooterBox = styled.div`
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 40%;
+`;
+
 export const Wave = styled.div`
     position: absolute;
     height: 70px;

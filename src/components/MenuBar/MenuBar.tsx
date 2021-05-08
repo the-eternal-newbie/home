@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
-import { CSSProperties } from 'styled-components';
 import { supportedLanguages } from '../../utils/i18n/index';
 import { usaFlag, mexicoFlag } from '../../utils/icons/flags/index';
 import useMatchMedia from '../../utils/hooks/useMatchMedia';
@@ -58,19 +57,19 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
         }
     };
 
-    const borderStyle = (index: number): CSSProperties => {
-        return index == supportedLanguages.length - 1
-            ? {
-                  borderTopRightRadius: '4px',
-                  borderBottomRightRadius: '4px',
-              }
-            : index === 0
-            ? {
-                  borderTopLeftRadius: '4px',
-                  borderBottomLeftRadius: '4px',
-              }
-            : {};
-    };
+    // const borderStyle = (index: number): CSSProperties => {
+    //     return index == supportedLanguages.length - 1
+    //         ? {
+    //               borderTopRightRadius: '4px',
+    //               borderBottomRightRadius: '4px',
+    //           }
+    //         : index === 0
+    //         ? {
+    //               borderTopLeftRadius: '4px',
+    //               borderBottomLeftRadius: '4px',
+    //           }
+    //         : {};
+    // };
 
     return (
         <>
@@ -148,6 +147,7 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
                     <div style={LangContainer}>
                         {supportedLanguages.map((langOpt, index) => (
                             <img
+                                key={`{$index}-${langOpt}`}
                                 src={matchCountry(langOpt)}
                                 width={'20px'}
                                 style={{

@@ -8,5 +8,6 @@ export const es = {
     'About.Title': 'Un Poco Sobre Mí',
     'About.Content.Short':
         'Esto es sólo un texto de prueba. No incluye información real acerca de mí. Sólo estoy probando un párrafo largo.',
+    'Footer.Made': 'Hecho con:',
     'Resume.Job.Position': 'Desarrollador Full-Stack',
 };
