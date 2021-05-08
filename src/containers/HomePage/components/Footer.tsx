@@ -1,12 +1,9 @@
 import React from 'react';
-import { FooterBox, FooterSection } from '../HomePage.styled';
+import { FooterBox, FooterContact, FooterSection } from '../HomePage.styled';
 import Portrait from '../../../components/Portrait/Portrait';
 import Text from '../../../components/Text/Text';
 import { colors } from '../../../utils/styles/_colors';
-import ts from '../../../utils/media/ts.png';
-import rct from '../../../utils/media/react.png';
-import stc from '../../../utils/media/styled.png';
-import node from '../../../utils/media/node.png';
+import technologies from '../../../utils/media/technologies';
 
 const Footer: React.FC = () => {
     return (
@@ -16,15 +13,48 @@ const Footer: React.FC = () => {
                 animation={'fdInBtm'}
                 style={{
                     color: colors.yellow2,
-                    fontSize: '35px',
+                    fontSize: '24px',
                     fontWeight: 600,
                 }}
             />
             <FooterBox>
-                <Portrait filter={'greyscale'} variation={'square'} size={'small'} url={ts}></Portrait>
-                <Portrait filter={'greyscale'} variation={'square'} size={'small'} url={rct}></Portrait>
-                <Portrait filter={'greyscale'} variation={'square'} size={'small'} url={node}></Portrait>
+                {technologies.map((tech, index) => (
+                    <>
+                        <Portrait
+                            key={index}
+                            filter={'greyscale'}
+                            variation={'square'}
+                            size={'small'}
+                            url={tech}
+                        ></Portrait>
+                        {index !== technologies.length - 1 && (
+                            <div style={{ width: '2px', height: '180px', backgroundColor: colors.yellow2 }}>&nbsp;</div>
+                        )}
+                    </>
+                ))}
             </FooterBox>
+            <FooterContact>
+                <div>
+                    <Text
+                        id={'Footer.Contact.Title'}
+                        animation={'fdInBtm'}
+                        style={{
+                            color: colors.totalwhite,
+                            fontSize: '18px',
+                            fontWeight: 600,
+                        }}
+                    />
+                    <Text
+                        id={'Generic.Phone'}
+                        animation={'fdInBtm'}
+                        style={{
+                            color: colors.totalwhite,
+                            fontSize: '12px',
+                            fontWeight: 400,
+                        }}
+                    />
+                </div>
+            </FooterContact>
         </FooterSection>
     );
 };

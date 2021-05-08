@@ -13,10 +13,17 @@ export const TerminalSection = styled.section`
 export const AboutSection = styled.section`
     display: flex;
     background-color: ${colors.totalwhite};
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 120%;
+`;
+
+export const AboutContainer = styled.div`
+    width: auto;
+    display: flex;
+    padding: 60px 200px;
+    flex-direction: column;
+    background-color: ${colors.yellow2};
 `;
 
 export const FooterSection = styled.section`
@@ -28,8 +35,18 @@ export const FooterSection = styled.section`
 export const FooterBox = styled.div`
     display: flex;
     margin-top: 30px;
+    align-items: center;
     justify-content: space-between;
     width: 40%;
+    height: 200px;
+`;
+
+export const FooterContact = styled.footer`
+    display: flex;
+    background-color: ${colors.yellow2};
+    width: 88%;
+    padding: 60px;
+    margin-top: 100px;
 `;
 
 export const Wave = styled.div`
@@ -59,18 +76,6 @@ export const Wave = styled.div`
         left: 0;
         top: 27px;
     }
-`;
-
-export const AboutContainer = styled.div`
-    max-width: 72%;
-    display: flex;
-`;
-
-export const AboutBox = styled.div`
-    display: flex;
-    margin-left: 60px;
-    min-width: '200px';
-    flex-direction: column;
 `;
 
 export const Container = styled.section`

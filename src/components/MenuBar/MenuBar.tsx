@@ -147,7 +147,7 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
                     <div style={LangContainer}>
                         {supportedLanguages.map((langOpt, index) => (
                             <img
-                                key={`{$index}-${langOpt}`}
+                                key={`${index}-${langOpt}`}
                                 src={matchCountry(langOpt)}
                                 width={'20px'}
                                 style={{
@@ -166,7 +166,7 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
                 </NavContainer>
             </div>
 
-            {!sticky && <Line />}
+            {/* {!sticky && <Line />} */}
         </>
     );
 };
