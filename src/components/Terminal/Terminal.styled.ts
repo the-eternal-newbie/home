@@ -6,7 +6,7 @@ export const TerminalFrame = styled.div`
     border-radius: 6px;
     padding-left: 20px;
     padding-top: 30px;
-    width: 90%;
+    width: 100vw;
     max-width: 1000px;
     height: 100%;
     display: flex;
@@ -55,11 +55,11 @@ export const TypeWriter = styled.pre`
     color: ${colors.white1};
     font-family: 'Roboto Mono', monospace;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 1em;
 `;
 
 export const Bash = styled.span`
-    font-size: 15px;
+    font-size: 1em;
     color: ${colors.green1};
     font-weight: 700;
     font-family: 'Roboto Mono', monospace;

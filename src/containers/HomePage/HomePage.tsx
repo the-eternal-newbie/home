@@ -6,7 +6,7 @@ import { Container } from './HomePage.styled';
 const HomePage: React.FC = () => {
     return (
         <>
-            <Container>
+            <Container style={{ height: '600px' }}>
                 <TerminalStrip />
             </Container>
             <Container>

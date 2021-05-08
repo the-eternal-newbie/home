@@ -12,10 +12,10 @@ const TerminalStrip: React.FC = () => {
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center',
                     justifyContent: 'flex-end',
-                    width: '30%',
+                    width: '42%',
                     height: '100%',
+                    paddingLeft: '46px',
                 }}
             >
                 {/* <img src={logo} width={'150px'} /> */}
@@ -25,16 +25,18 @@ const TerminalStrip: React.FC = () => {
                     style={{
                         color: colors.yellow2,
                         fontFamily: "'Montserrat', sans-serif",
-                        fontSize: '3vw',
+                        fontSize: '3.5em',
                         fontWeight: 800,
+                        wordSpacing: '-3px',
+                        transform: 'scale(1,1.1)',
                         lineHeight: '65px',
+                        maxWidth: '50%',
                         textAlign: 'left',
-                        minWidth: '520px',
                         marginTop: '10px',
                     }}
                 />
             </div>
-            <div style={{ display: 'flex', height: '90%', width: '60%' }}>
+            <div style={{ display: 'flex', height: '90%', width: '65%' }}>
                 <Terminal />
             </div>
         </TerminalSection>
