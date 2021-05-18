@@ -3,7 +3,6 @@ import { TerminalSection } from '../HomePage.styled';
 import Terminal from '../../../components/Terminal/Terminal';
 import Text from '../../../components/Text/Text';
 import { colors } from '../../../utils/styles/_colors';
-import logo from '../../../newbie.svg';
 
 const TerminalStrip: React.FC = () => {
     return (
@@ -25,12 +24,11 @@ const TerminalStrip: React.FC = () => {
                     style={{
                         color: colors.yellow2,
                         fontFamily: "'Montserrat', sans-serif",
-                        fontSize: '3em',
+                        fontSize: '3.2em',
                         fontWeight: 800,
                         wordSpacing: '-3px',
-                        transform: 'scale(1,1.2)',
                         lineHeight: '55px',
-                        maxWidth: '50%',
+                        width: '350px',
                         textAlign: 'left',
                         marginTop: '10px',
                     }}

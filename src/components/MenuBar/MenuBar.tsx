@@ -5,7 +5,6 @@ import { usaFlag, mexicoFlag } from '../../utils/icons/flags/index';
 import useMatchMedia from '../../utils/hooks/useMatchMedia';
 import {
     LangContainer,
-    Line,
     MenuBarContainer,
     MenuBarCollapsed,
     NavBar,

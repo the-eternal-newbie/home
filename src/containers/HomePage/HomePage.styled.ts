@@ -13,7 +13,7 @@ export const TerminalSection = styled.section`
 export const AboutSection = styled.section`
     display: flex;
     background-color: ${colors.totalwhite};
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
 `;

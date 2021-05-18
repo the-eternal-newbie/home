@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from '../../../components/Button/Button';
 import Portrait from '../../../components/Portrait/Portrait';
 import Text from '../../../components/Text/Text';
 import { colors } from '../../../utils/styles/_colors';
 import { AboutContainer, AboutSection } from '../HomePage.styled';
+import profile from '../../../utils/media/profile.png';
 
 const AboutStrip: React.FC = () => {
     return (
@@ -45,7 +45,7 @@ const AboutStrip: React.FC = () => {
                     }}
                 />
             </AboutContainer>
-            <Portrait variation={'square'} size={'large'} filter={'normal'} />
+            <Portrait variation={'square'} size={'large'} filter={'normal'} url={profile} />
         </AboutSection>
     );
 };
