@@ -1,17 +1,15 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { supportedLanguages } from '../../utils/i18n/index';
 import { usaFlag, mexicoFlag } from '../../utils/icons/flags/index';
+import useMatchMedia from '../../utils/hooks/useMatchMedia';
 import {
     LangContainer,
-    Line,
     MenuBarContainer,
     MenuBarCollapsed,
     NavBar,
     NavContainer,
-    NavElement,
     NavElementLink,
-    LangContainerCollapsed,
 } from './MenuBar.styled';
 import Logo from '../Logo/Logo';
 import Text from '../Text/Text';
@@ -19,10 +17,11 @@ import { store } from '../../utils/redux/store';
 import { setLang } from '../../utils/redux/actions';
 import { colors } from '../../utils/styles/_colors';
 import { IMenuBar } from './MenuBar.types';
-import { CSSProperties } from 'styled-components';
+import SideBar from '../SideBar/SideBar';
 
 const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
     const { lang } = props;
+    const [mediaSize] = useMatchMedia();
     const menuBar = useRef<HTMLDivElement>(null);
     const [displayHome, setDisplayHome] = useState(false);
 
@@ -34,6 +33,9 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
             : menuBar.current && menuBar.current.offsetTop === window.pageYOffset && setSticky(false);
 
     useEffect(() => {
+        if (window.location.href.substring(window.location.href.length - 2, window.location.href.length) !== '#/')
+            setDisplayHome(true);
+        else setDisplayHome(false);
         const watchScroll = () => {
             window.addEventListener('scroll', logit);
         };
@@ -54,126 +56,117 @@ const MenuBar: React.FC<IMenuBar> = (props: IMenuBar) => {
         }
     };
 
-    const borderStyle = (index: number): CSSProperties => {
-        return index == supportedLanguages.length - 1
-            ? {
-                  borderTopRightRadius: '4px',
-                  borderBottomRightRadius: '4px',
-              }
-            : index === 0
-            ? {
-                  borderTopLeftRadius: '4px',
-                  borderBottomLeftRadius: '4px',
-              }
-            : {};
-    };
-
-    useEffect(() => {
-        if (window.location.href.substring(window.location.href.length - 2, window.location.href.length) !== '#/')
-            setDisplayHome(true);
-        else setDisplayHome(false);
-    }, []);
+    // const borderStyle = (index: number): CSSProperties => {
+    //     return index == supportedLanguages.length - 1
+    //         ? {
+    //               borderTopRightRadius: '4px',
+    //               borderBottomRightRadius: '4px',
+    //           }
+    //         : index === 0
+    //         ? {
+    //               borderTopLeftRadius: '4px',
+    //               borderBottomLeftRadius: '4px',
+    //           }
+    //         : {};
+    // };
 
     return (
-        <div ref={menuBar} style={sticky ? MenuBarCollapsed : MenuBarContainer}>
-            <Logo type={sticky ? 'minimal' : 'full'} size={'medium'} />
-            <NavContainer
-                style={
-                    sticky
-                        ? {
-                              width: '85%',
-                          }
-                        : {
-                              marginLeft: '160px',
-                              marginTop: '28px',
-                              marginBottom: '4px',
-                              width: '90%',
-                          }
-                }
-            >
-                <NavBar>
-                    <NavElementLink
-                        style={{ display: displayHome ? 'block' : 'none' }}
-                        onClick={() => setDisplayHome(false)}
-                        to="/"
-                    >
-                        <Text
-                            id={'Generic.Home'}
-                            animation={'fdInLft'}
-                            style={{
-                                color: sticky ? colors.totalwhite : colors.grey3,
-                                margin: '0px',
-                                fontSize: '12px',
-                            }}
-                        />
-                    </NavElementLink>
-                    <NavElementLink onClick={() => setDisplayHome(true)} to="/contact">
-                        <Text
-                            id={'Generic.Contact'}
-                            animation={'fdInLft'}
-                            style={{
-                                color: sticky ? colors.totalwhite : colors.grey3,
-                                margin: '0px',
-                                fontSize: '12px',
-                            }}
-                        />
-                    </NavElementLink>
-                    <NavElementLink onClick={() => setDisplayHome(true)} to="/projects">
-                        <Text
-                            id={'Generic.Projects'}
-                            animation={'fdInLft'}
-                            style={{
-                                color: sticky ? colors.totalwhite : colors.grey3,
-                                margin: '0px',
-                                fontSize: '12px',
-                            }}
-                        />
-                    </NavElementLink>
-                    <NavElementLink onClick={() => setDisplayHome(true)} to="/resume">
-                        <Text
-                            id={'Generic.Resume'}
-                            animation={'fdInLft'}
-                            style={{
-                                color: sticky ? colors.totalwhite : colors.grey3,
-                                margin: '0px',
-                                fontSize: '12px',
-                            }}
-                        />
-                    </NavElementLink>
-                </NavBar>
-                <div style={sticky ? LangContainerCollapsed : LangContainer}>
-                    {supportedLanguages.map((langOpt, index) =>
-                        sticky ? (
+        <>
+            <div ref={menuBar} style={sticky ? MenuBarCollapsed : MenuBarContainer}>
+                <Logo type={sticky ? 'minimal' : 'full'} size={'medium'} />
+                <NavContainer
+                    style={
+                        sticky
+                            ? {
+                                  width: '85%',
+                              }
+                            : {
+                                  margin: '28px 10px 4px 160px',
+                              }
+                    }
+                >
+                    {mediaSize === 'mediaSmall' || mediaSize === 'mediaXsmall' || mediaSize === 'mediaMedium' ? (
+                        <SideBar />
+                    ) : (
+                        <NavBar>
+                            <NavElementLink
+                                style={{ display: displayHome ? 'block' : 'none' }}
+                                onClick={() => setDisplayHome(false)}
+                                to="/"
+                            >
+                                <Text
+                                    id={'Generic.Home'}
+                                    animation={'fdInLft'}
+                                    style={{
+                                        color: sticky ? colors.totalwhite : colors.yellow2,
+                                        margin: '0px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                    }}
+                                />
+                            </NavElementLink>
+                            <NavElementLink onClick={() => setDisplayHome(true)} to="/contact">
+                                <Text
+                                    id={'Generic.Contact'}
+                                    animation={'fdInLft'}
+                                    style={{
+                                        color: sticky ? colors.totalwhite : colors.yellow2,
+                                        margin: '0px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                    }}
+                                />
+                            </NavElementLink>
+                            <NavElementLink onClick={() => setDisplayHome(true)} to="/projects">
+                                <Text
+                                    id={'Generic.Projects'}
+                                    animation={'fdInLft'}
+                                    style={{
+                                        color: sticky ? colors.totalwhite : colors.yellow2,
+                                        margin: '0px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                    }}
+                                />
+                            </NavElementLink>
+                            <NavElementLink onClick={() => setDisplayHome(true)} to="/resume">
+                                <Text
+                                    id={'Generic.Resume'}
+                                    animation={'fdInLft'}
+                                    style={{
+                                        color: sticky ? colors.totalwhite : colors.yellow2,
+                                        margin: '0px',
+                                        fontSize: '15px',
+                                        fontWeight: 600,
+                                    }}
+                                />
+                            </NavElementLink>
+                        </NavBar>
+                    )}
+                    <div style={LangContainer}>
+                        {supportedLanguages.map((langOpt, index) => (
                             <img
+                                key={`${index}-${langOpt}`}
                                 src={matchCountry(langOpt)}
                                 width={'20px'}
-                                style={{ margin: '6px', cursor: 'pointer' }}
+                                style={{
+                                    margin: '6px',
+                                    cursor: 'pointer',
+                                    borderRadius: '50%',
+                                    border:
+                                        langOpt === lang
+                                            ? `2px solid ${sticky ? colors.totalwhite : colors.greyblack}`
+                                            : 'none',
+                                }}
                                 onClick={() => store.dispatch(setLang(langOpt))}
                             />
-                        ) : (
-                            <div
-                                key={`${index}${lang}-menu`}
-                                onClick={() => store.dispatch(setLang(langOpt))}
-                                style={{
-                                    backgroundColor: langOpt === lang ? colors.grey4 : colors.white1,
-                                    width: '50%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    cursor: 'pointer',
-                                    ...borderStyle(index),
-                                }}
-                            >
-                                <img src={matchCountry(langOpt)} width={'14px'} style={{ margin: '6px' }} />
-                                <NavElement style={{ color: langOpt === lang ? colors.white1 : colors.grey4 }}>
-                                    {!sticky ? langOpt.toUpperCase() : ''}
-                                </NavElement>
-                            </div>
-                        ),
-                    )}
-                </div>
-            </NavContainer>
-            {!sticky && <Line />}
-        </div>
+                        ))}
+                    </div>
+                </NavContainer>
+            </div>
+
+            {/* {!sticky && <Line />} */}
+        </>
     );
 };
 

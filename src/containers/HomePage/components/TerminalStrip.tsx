@@ -3,28 +3,40 @@ import { TerminalSection } from '../HomePage.styled';
 import Terminal from '../../../components/Terminal/Terminal';
 import Text from '../../../components/Text/Text';
 import { colors } from '../../../utils/styles/_colors';
-import logo from '../../../newbie.svg';
 
 const TerminalStrip: React.FC = () => {
     return (
         <TerminalSection>
-            <img src={logo} width={'150px'} />
-            <Text
-                id={'Generic.Catchphrase'}
-                animation={'fdInBtm'}
+            <div
                 style={{
-                    color: colors.yellow2,
-                    fontFamily: "'Montserrat', sans-serif",
-                    fontSize: '2vw',
-                    fontWeight: 800,
-                    letterSpacing: '3px',
-                    lineHeight: '28px',
-                    textAlign: 'center',
-                    minWidth: '520px',
-                    marginTop: '10px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-end',
+                    width: '42%',
+                    height: '100%',
+                    paddingLeft: '46px',
                 }}
-            />
-            <Terminal />
+            >
+                {/* <img src={logo} width={'150px'} /> */}
+                <Text
+                    id={'Generic.Catchphrase'}
+                    animation={'fdInBtm'}
+                    style={{
+                        color: colors.yellow2,
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontSize: '3.2em',
+                        fontWeight: 800,
+                        wordSpacing: '-3px',
+                        lineHeight: '55px',
+                        width: '350px',
+                        textAlign: 'left',
+                        marginTop: '10px',
+                    }}
+                />
+            </div>
+            <div style={{ display: 'flex', height: '90%', width: '65%' }}>
+                <Terminal />
+            </div>
         </TerminalSection>
     );
 };

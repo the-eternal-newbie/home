@@ -6,8 +6,8 @@ export const TerminalFrame = styled.div`
     border-radius: 6px;
     padding-left: 20px;
     padding-top: 30px;
-    width: 60%;
-    min-width: 400px;
+    width: 100vw;
+    max-width: 1000px;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -37,6 +37,7 @@ export const TerminalHeader = styled.div`
     font-size: 0.75em;
     margin-left: -20px;
     margin-top: -30px;
+    margin-bottom: 12px;
     background-color: ${colors.white2};
 `;
 
@@ -54,11 +55,11 @@ export const TypeWriter = styled.pre`
     color: ${colors.white1};
     font-family: 'Roboto Mono', monospace;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 1em;
 `;
 
 export const Bash = styled.span`
-    font-size: 15px;
+    font-size: 1em;
     color: ${colors.green1};
     font-weight: 700;
     font-family: 'Roboto Mono', monospace;
